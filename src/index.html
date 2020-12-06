@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Webcam Timelapse</title>
+    
+    <link
+    rel="stylesheet"
+    href="bulma.min.css"
+  />
+  
+    <link rel="stylesheet" href="index.css">
+    
+    <script src="moment.js"></script>
+    <script defer src="render.js"></script>    
+    
+  </head>
+  <body class="content" >
+    <h1>Simple Webcam Timelapse App</h1>
+    
+    <div class="columns">
+        
+        <div class="column is-one-third">
+            <p>Choose a camera source</p>
+    
+            <select id="cameraSelect" class="select">        
+            </select>
+            <button id="updateCameraListBtn" class="button is-text">
+                Update cameras list 
+            </button>
+            
+            <hr />
+            
+            <p>Current target directory: </p>
+            <div class="card">
+                <div class="card-content">
+                    <div id="targetPath" class="content">
+                        target
+                    </div>
+                </div>
+            </div>
+            <button id="directoryBtn" class="button is-primary">
+                Select target directory
+            </button>
+            
+            <hr />
+            
+            <div class="columns">
+                
+                <div class="column is-one-half">
+                     
+                    <p>File name reference</p>
+                    
+                    <input class="input" type="text" id="fileNameRef" placeholder="Image" value="Image">
+            
+                </div>
+                
+                <div class="column is-one-half">
+                    <p>Time interval</p>
+                    
+                    <div class="columns">
+                        <div class="column is-two-thirds">
+                            <input class="input" type="number"  id="interval" min="1" max="1440" value="2">
+                        </div>
+                        <div class="column">
+                            mins
+                        </div>
+                    </div>
+            
+                     
+                </div>
+                
+                
+            </div>
+           
+            
+            
+            <hr />
+                
+            <button id="startBtn" class="button is-primary">Start</button>
+            <button id="stopBtn" class="button is-warning">Pause</button>
+            <button id="resetBtn" class="button is-danger">Reset</button>
+            <p id="timer">Next capture in 0 secs</p>
+        </div>
+        
+        <div class="column">            
+            <!-- <video></video> -->
+            <video id="video" width="720" height="540" autoplay muted></video>
+        </div>
+        
+    </div>
+    
+    
+    
+    
+    
+  </body>
+</html>
