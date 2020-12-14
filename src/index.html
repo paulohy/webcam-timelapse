@@ -26,8 +26,12 @@
             <select id="cameraSelect" class="select">        
             </select>
             <button id="updateCameraListBtn" class="button is-text">
-                Update cameras list 
+                Update list 
             </button>
+            <button id="previewBtn" class="button is-primary">
+                Preview
+            </button>
+            <input class="checkbox" id="live" type="checkbox" value="live"> Live</input>
             
             <hr />
             
@@ -83,9 +87,9 @@
             <p id="timer">Next capture in 0 secs</p>
         </div>
         
-        <div class="column">            
-            <!-- <video></video> -->
-            <video id="video" width="720" height="540" autoplay muted></video>
+        <div class="column">
+            <video id="video" width="720" height="540" autoplay muted hidden></video>
+            <img id="imgPreview">
         </div>
         
     </div>
